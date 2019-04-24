@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+    - "8"
+deploy:
+  provider: heroku
+  app: meysam 
+  api_key:
+    secure: 4cb548ac-f3a9-498f-bd10-7401dcb852db
+
