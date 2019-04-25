@@ -3,7 +3,7 @@
 
 function method1(param)
 {
-	//Implementation code here 
+	//Implementation code here tests
 	return {}; 
 }
 module.exports = {
