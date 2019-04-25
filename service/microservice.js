@@ -1,10 +1,10 @@
 
 
 
-function method1(param)
+function me1(param)
 {
 	//Implementation code here 
 	return {}; 
 }
 module.exports = {
-method1:method1 }
+me1:me1 }
