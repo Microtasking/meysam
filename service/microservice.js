@@ -1,11 +1,11 @@
 
 
 
-function endpo1(param)
+function endp1(param)
 {
 	//Implementation code here 
 	return {}; 
 }
 module.exports = {
-endpo1:endpo1 }
-//Fri Apr 26 2019 15:59:25 GMT+0000 (UTC)
+endp1:endp1 }
+//Mon Apr 29 2019 12:27:42 GMT-0400 (EDT)
