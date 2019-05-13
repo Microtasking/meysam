@@ -1,20 +1,19 @@
 
 
 
-function sayGoodby(name)
+function sayHello(name)
 {
-	//Implementation code here
-	var greetingMessage = "Goodby " + name;
-	return greetingMessage; 
+	//Implementation code here 
+	return {}; 
 }
 
 
-function sayApresto(name)
+function sayGoodbye(name)
 {
-	var greetingMessage = "A presto " + name;
-	return greetingMessage; 
+	//Implementation code here 
+	return {}; 
 }
 module.exports = {
-sayGoodby:sayGoodby,
-sayApresto:sayApresto }
-//Mon May 13 2019 04:37:18 GMT+0000 (UTC)
+sayHello:sayHello,
+sayGoodbye:sayGoodbye }
+//Mon May 13 2019 07:13:44 GMT+0000 (UTC)
