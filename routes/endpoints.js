@@ -11,5 +11,14 @@ router.post('/sayCiao', function(req, res) {
   });
 
 
+router.get('/sayHello', function(req, res) {
+ res.send(service.sayHello(req.query.name));
+  });
+
+router.post('/sayHello', function(req, res) {
+ res.send(service.sayHello(req.body.name));
+  });
+
+
 
 module.exports = router;
