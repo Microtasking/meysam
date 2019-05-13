@@ -2,21 +2,21 @@ var express = require('express');
 var router = express.Router();
 var service = require('../service/microservice');
 
-router.get('/getAllDepartments', function(req, res) {
- res.send(service.getAllDepartments());
+router.get('/sayGoodby', function(req, res) {
+ res.send(service.sayGoodby(req.query.name));
   });
 
-router.post('/getAllDepartments', function(req, res) {
- res.send(service.getAllDepartments());
+router.post('/sayGoodby', function(req, res) {
+ res.send(service.sayGoodby(req.body.name));
   });
 
 
-router.get('/getMembersBelongTo', function(req, res) {
- res.send(service.getMembersBelongTo(req.query.departmentId));
+router.get('/sayApresto', function(req, res) {
+ res.send(service.sayApresto(req.query.name));
   });
 
-router.post('/getMembersBelongTo', function(req, res) {
- res.send(service.getMembersBelongTo(req.body.departmentId));
+router.post('/sayApresto', function(req, res) {
+ res.send(service.sayApresto(req.body.name));
   });
 
 

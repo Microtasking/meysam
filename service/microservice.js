@@ -1,19 +1,20 @@
 
 
 
-function getAllDepartments()
+function sayGoodby(name)
 {
-	//Implementation code here 
-	return {}; 
+	//Implementation code here
+	var greetingMessage = "Good by " + name;
+	return greetingMessage; 
 }
 
 
-function getMembersBelongTo(departmentId)
+function sayApresto(name)
 {
 	//Implementation code here 
 	return {}; 
 }
 module.exports = {
-getAllDepartments:getAllDepartments,
-getMembersBelongTo:getMembersBelongTo }
-//Mon May 13 2019 03:51:22 GMT+0000 (UTC)
+sayGoodby:sayGoodby,
+sayApresto:sayApresto }
+//Mon May 13 2019 04:17:13 GMT+0000 (UTC)
