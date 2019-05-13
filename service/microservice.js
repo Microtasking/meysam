@@ -16,4 +16,4 @@ function sayApresto(name)
 module.exports = {
 sayGoodby:sayGoodby,
 sayApresto:sayApresto }
-//Mon May 13 2019 03:30:17 GMT+0000 (UTC)
+//Mon May 13 2019 03:31:07 GMT+0000 (UTC)
