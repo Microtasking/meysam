@@ -1,59 +1,11 @@
 
 
 
-function showNumbers(source)
+function sayCiao(name)
 {
-	//Implementation code here 
-	return {}; 
-}
-
-
-function pop(source)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
-function push(target, number)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
-function shift(source)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
-function unshift(target, number)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
-function initialize(target)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
-function sayHello(name)
-{
-	//Implementation code here 
-	return {}; 
+	var greetingMessage = "Ciao " + name; 
+	return greetingMessage; 
 }
 module.exports = {
-showNumbers:showNumbers,
-pop:pop,
-push:push,
-shift:shift,
-unshift:unshift,
-initialize:initialize,
-sayHello:sayHello }
-//Sat May 11 2019 12:23:16 GMT-0400 (EDT)
+sayCiao:sayCiao }
+//Mon May 13 2019 02:57:50 GMT+0000 (UTC)
