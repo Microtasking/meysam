@@ -2,6 +2,15 @@ var express = require('express');
 var router = express.Router();
 var service = require('../service/microservice');
 
+router.get('/addTodo', function(req, res) {
+ res.send(service.addTodo(req.query.todo));
+  });
+
+router.post('/addTodo', function(req, res) {
+ res.send(service.addTodo(req.body.todo));
+  });
+
+
 router.get('/updateTodo', function(req, res) {
  res.send(service.updateTodo(req.query.todo));
   });
@@ -11,12 +20,30 @@ router.post('/updateTodo', function(req, res) {
   });
 
 
+router.get('/deleteTodo', function(req, res) {
+ res.send(service.deleteTodo(req.query.todo));
+  });
+
+router.post('/deleteTodo', function(req, res) {
+ res.send(service.deleteTodo(req.body.todo));
+  });
+
+
 router.get('/SaveObject', function(req, res) {
  res.send(service.SaveObject(req.query.todo));
   });
 
 router.post('/SaveObject', function(req, res) {
  res.send(service.SaveObject(req.body.todo));
+  });
+
+
+router.get('/fetchTodo', function(req, res) {
+ res.send(service.fetchTodo(req.query.id));
+  });
+
+router.post('/fetchTodo', function(req, res) {
+ res.send(service.fetchTodo(req.body.id));
   });
 
 
@@ -74,6 +101,15 @@ router.post('/createGroup', function(req, res) {
   });
 
 
+router.get('/getAllTodoOfaGroup', function(req, res) {
+ res.send(service.getAllTodoOfaGroup(req.query.groupId,req.query.userId));
+  });
+
+router.post('/getAllTodoOfaGroup', function(req, res) {
+ res.send(service.getAllTodoOfaGroup(req.body.groupId,req.body.userId));
+  });
+
+
 router.get('/updatePriorityOfaTodo', function(req, res) {
  res.send(service.updatePriorityOfaTodo(req.query.id,req.query.priority));
   });
@@ -92,6 +128,15 @@ router.post('/fetchTodosBasedOnStatus', function(req, res) {
   });
 
 
+router.get('/markTodoAsDone', function(req, res) {
+ res.send(service.markTodoAsDone(req.query.id));
+  });
+
+router.post('/markTodoAsDone', function(req, res) {
+ res.send(service.markTodoAsDone(req.body.id));
+  });
+
+
 router.get('/remindOnDueDate', function(req, res) {
  res.send(service.remindOnDueDate(req.query.userId,req.query.dueDate));
   });
@@ -101,12 +146,12 @@ router.post('/remindOnDueDate', function(req, res) {
   });
 
 
-router.get('/markTodoAsCompleted', function(req, res) {
- res.send(service.markTodoAsCompleted(req.query.id));
+router.get('/markTodoAsArchived', function(req, res) {
+ res.send(service.markTodoAsArchived(req.query.id));
   });
 
-router.post('/markTodoAsCompleted', function(req, res) {
- res.send(service.markTodoAsCompleted(req.body.id));
+router.post('/markTodoAsArchived', function(req, res) {
+ res.send(service.markTodoAsArchived(req.body.id));
   });
 
 
