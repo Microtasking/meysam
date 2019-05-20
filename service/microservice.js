@@ -1,53 +1,29 @@
 
 
 
-function addTodo(todo)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
 function updateTodo(todo)
 {
 	//Implementation code here 
-	   if (todo === null || todo === '') {
+    if(todo === null || todo === ''){
         throw new TypeError('IllegalArgumentException');
-    } else if (todo.createdDate === null || todo.createdDate === '') {
+    } else if(todo.createdDate === null || todo.createdDate=== ''){
         throw new TypeError('IllegalArgumentException');
-    } else if (todo.createdTime == null || todo.createdTime === '') {
+    } else if(todo.createdTime == null || todo.createdTime=== ''){
         throw new TypeError('IllegalArgumentException');
-    } else if (todo.userId == null || todo.userId === '') {
+    } else if(todo.userId == null || todo.userId=== ''){
         throw new TypeError('IllegalArgumentException');
-    } else if (todo.dataStoreId == null || todo.dataStoreId === '') {
+    } else if(todo.dataStoreId == null || todo.dataStoreId=== ''){
         throw new TypeError('IllegalArgumentException');
-    } else if (todo.id == null || todo.id === '') {
+    }  else if(todo.id == null || todo.id=== ''){
         throw new TypeError('IllegalArgumentException');
     } else {
-        var _res = UpdateObjectImplementation(todo);
-        if(_res === null){
-            throw new TypeError('IllegalArgumentException');
-        }
+        // Implement todo update
     }
-    return todo; 
-}
-
-
-function deleteTodo(todo)
-{
-	//Implementation code here 
-	return {}; 
+    return todo;
 }
 
 
 function SaveObject(todo)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
-function fetchTodo(id)
 {
 	//Implementation code here 
 	return {}; 
@@ -78,20 +54,10 @@ function UpdateObject(todo)
 function fetchAllTodos(userId)
 {
 	//Implementation code here 
-    if (userId === null || userId === '') {
+ if (userId == null || userId === '') {
         throw new TypeError('IllegalArgumentException');
     }
-    if(fetchTodo(userId) == null){
-        return {};
-    }
-    var allTodos=FetchAllObjectsImplementation(userId);
-    if(allTodos==null){
-        throw new TypeError('IllegalArgumentException');
-    }
-    else
-    {
-        return allTodos; 
-    }
+    return {};
 }
 
 
@@ -105,31 +71,19 @@ function FetchAllObjects(userId)
 function createGroup(todoArray, groupId)
 {
 	//Implementation code here 
- //Implementation code here
-    if (groupId === null || groupId === '') {
+	 if (groupId === null || groupId === '') {
         throw new TypeError('IllegalArgumentException');
     }
     if (todoArray.contains(groupId)) {
         throw new TypeError('DuplicateGroupId');
     }
-    
-    
-    
     return {};
-}
-
-
-function getAllTodoOfaGroup(groupId, userId)
-{
-	//Implementation code here 
-	return {}; 
 }
 
 
 function updatePriorityOfaTodo(id, priority)
 {
-	//Implementation code here 
-	if (id === null || id === '' || priority === null || priority === "") {
+if (id === null || id === '' || priority === null || priority === "") {
         throw new TypeError('IllegalArgumentException');
     }
 
@@ -137,24 +91,17 @@ function updatePriorityOfaTodo(id, priority)
         throw new TypeError('IllegalArgumentException');
 
     }
-    if (fetchTodo(id) === null) {
+    if (FetchObjectImplementation(id) === null) {
         return false;
     }
-   var newTodo = fetchTodo(id).priority;
-   newTodo.priority = priority;
-   var _res = UpdateObjectImplementation(newTodo);
-   if (_res === null){
-       return false;
-   }
-   
-   return true;
+    return {};
 }
 
 
 function fetchTodosBasedOnStatus(userId, status)
 {
 	//Implementation code here 
-if (userId == null || userId === "") {
+	 if (userId == null || userId === "") {
         throw new TypeError('Illegal Argument Exception');
     }
     var result = [];
@@ -173,85 +120,36 @@ if (userId == null || userId === "") {
 }
 
 
-function markTodoAsDone(id)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
 function remindOnDueDate(userId, dueDate)
 {
 	//Implementation code here 
-	  if (userId === null || dueDate === null) throw new TypeError('Illegal Argument Exception');
+  if (userId === null || dueDate === null) throw new TypeError('Illegal Argument Exception');
     if (userId === '' || dueDate === '') throw new TypeError('Illegal ArgumentException');
-    
-    //fetch active todos
-    var todo = fetchTodosBasedOnStatus(userId,"2");
-    var listOfDue = [];
-    if(todo!=null){
-        for(var i = 0; i < todo.length; i++){
-            var tempTodo = todo[i];
-            if (tempTodo.dueDate = dueDate){  
-                    listOfDue.append(tempTodo);
-            }
-        }
-    }
-    else{
-        throw new TypeError ('Illegal Argument Exception');
-    }
-    //store 
-    return listOfDue;
+    var todo = fetchAllTodos(userId);
+    return {};
 }
 
 
-function markTodoAsArchived(id)
+function markTodoAsCompleted(id)
 {
 	//Implementation code here 
-    if (id == null || id === '') {
+	  if (id === null || id === '') {
         throw new TypeError('IllegalArgumentException');
     }
-    var _todo = fetchTodo(id);
-    if(_todo == null){
-        return false;
-    }
-    else{
-       _todo.status = 3; 
-    }
-    
-    UpdateObjectImplementation(_todo);
-    
-    return true;
-}
-
-
-null
-{
-    if(date === null || date === ""){
-        throw new TypeError('IllegalArgumentException');
-    }
-    
-  var m = date.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
-  return (m) ? true : false;
-
+   
+    return {};
 }
 module.exports = {
-addTodo:addTodo,
 updateTodo:updateTodo,
-deleteTodo:deleteTodo,
 SaveObject:SaveObject,
-fetchTodo:fetchTodo,
 FetchObject:FetchObject,
 DeleteObject:DeleteObject,
 UpdateObject:UpdateObject,
 fetchAllTodos:fetchAllTodos,
 FetchAllObjects:FetchAllObjects,
 createGroup:createGroup,
-getAllTodoOfaGroup:getAllTodoOfaGroup,
 updatePriorityOfaTodo:updatePriorityOfaTodo,
 fetchTodosBasedOnStatus:fetchTodosBasedOnStatus,
-markTodoAsDone:markTodoAsDone,
 remindOnDueDate:remindOnDueDate,
-markTodoAsArchived:markTodoAsArchived,
-checkDateFormat:checkDateFormat }
-//Mon May 20 2019 05:19:38 GMT+0000 (UTC)
+markTodoAsCompleted:markTodoAsCompleted }
+//Mon May 20 2019 05:28:08 GMT+0000 (UTC)
