@@ -1,35 +1,29 @@
 
 
 
-function addTodo(todo)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
 function updateTodo(todo)
 {
 	//Implementation code here 
-	return {}; 
-}
-
-
-function deleteTodo(todo)
-{
-	//Implementation code here 
-	return {}; 
+    if(todo === null || todo === ''){
+        throw new TypeError('IllegalArgumentException');
+    } else if(todo.createdDate === null || todo.createdDate=== ''){
+        throw new TypeError('IllegalArgumentException');
+    } else if(todo.createdTime == null || todo.createdTime=== ''){
+        throw new TypeError('IllegalArgumentException');
+    } else if(todo.userId == null || todo.userId=== ''){
+        throw new TypeError('IllegalArgumentException');
+    } else if(todo.dataStoreId == null || todo.dataStoreId=== ''){
+        throw new TypeError('IllegalArgumentException');
+    }  else if(todo.id == null || todo.id=== ''){
+        throw new TypeError('IllegalArgumentException');
+    } else {
+        // Implement todo update
+    }
+    return todo;
 }
 
 
 function SaveObject(todo)
-{
-	//Implementation code here 
-	return {}; 
-}
-
-
-function fetchTodo(id)
 {
 	//Implementation code here 
 	return {}; 
@@ -60,7 +54,10 @@ function UpdateObject(todo)
 function fetchAllTodos(userId)
 {
 	//Implementation code here 
-	return {}; 
+ if (userId == null || userId === '') {
+        throw new TypeError('IllegalArgumentException');
+    }
+    return {};
 }
 
 
@@ -74,66 +71,85 @@ function FetchAllObjects(userId)
 function createGroup(todoArray, groupId)
 {
 	//Implementation code here 
-	return {}; 
-}
-
-
-function getAllTodoOfaGroup(groupId, userId)
-{
-	//Implementation code here 
-	return {}; 
+	 if (groupId === null || groupId === '') {
+        throw new TypeError('IllegalArgumentException');
+    }
+    if (todoArray.contains(groupId)) {
+        throw new TypeError('DuplicateGroupId');
+    }
+    return {};
 }
 
 
 function updatePriorityOfaTodo(id, priority)
 {
-	//Implementation code here 
-	return {}; 
+if (id === null || id === '' || priority === null || priority === "") {
+        throw new TypeError('IllegalArgumentException');
+    }
+
+    if (priority > 4 || priority < 1) {
+        throw new TypeError('IllegalArgumentException');
+
+    }
+    if (FetchObjectImplementation(id) === null) {
+        return false;
+    }
+    return {};
 }
 
 
-function fetchTodosBasedOnStatus(userId)
+function fetchTodosBasedOnStatus(userId, status)
 {
 	//Implementation code here 
-	return {}; 
-}
-
-
-function markTodoAsDone(id)
-{
-	//Implementation code here 
-	return {}; 
+	 if (userId == null || userId === "") {
+        throw new TypeError('Illegal Argument Exception');
+    }
+    var result = [];
+    var allTodos = fetchAllTodos(userId);
+    if (allTodos.length > 0) {
+        for (var i = 0; i < allTodos.length; i++) {
+            if (!(allTodos[i].status !== 1 || allTodos[i].status !== 2 || allTodos[i].status !== 3)) {
+                throw new TypeError("Illegal Argument Exception");
+            }
+            else {
+                result.push(allTodos[i]);
+            }
+        }
+    }
+    return result;
 }
 
 
 function remindOnDueDate(userId, dueDate)
 {
 	//Implementation code here 
-	return {}; 
+  if (userId === null || dueDate === null) throw new TypeError('Illegal Argument Exception');
+    if (userId === '' || dueDate === '') throw new TypeError('Illegal ArgumentException');
+    var todo = fetchAllTodos(userId);
+    return {};
 }
 
 
-function markTodoAsArchived(id)
+function markTodoAsCompleted(id)
 {
 	//Implementation code here 
-	return {}; 
+	  if (id === null || id === '') {
+        throw new TypeError('IllegalArgumentException');
+    }
+   
+    return {};
 }
 module.exports = {
-addTodo:addTodo,
 updateTodo:updateTodo,
-deleteTodo:deleteTodo,
 SaveObject:SaveObject,
-fetchTodo:fetchTodo,
 FetchObject:FetchObject,
 DeleteObject:DeleteObject,
 UpdateObject:UpdateObject,
 fetchAllTodos:fetchAllTodos,
 FetchAllObjects:FetchAllObjects,
 createGroup:createGroup,
-getAllTodoOfaGroup:getAllTodoOfaGroup,
 updatePriorityOfaTodo:updatePriorityOfaTodo,
 fetchTodosBasedOnStatus:fetchTodosBasedOnStatus,
-markTodoAsDone:markTodoAsDone,
 remindOnDueDate:remindOnDueDate,
-markTodoAsArchived:markTodoAsArchived }
-//Fri May 17 2019 02:17:05 GMT+0000 (UTC)
+markTodoAsCompleted:markTodoAsCompleted }
+//Mon May 20 2019 05:17:12 GMT+0000 (UTC)
